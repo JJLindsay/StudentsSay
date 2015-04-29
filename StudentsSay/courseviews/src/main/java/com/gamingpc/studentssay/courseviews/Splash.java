@@ -1,7 +1,11 @@
 package com.gamingpc.studentssay.courseviews;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * author: JJ Lindsay
@@ -19,6 +23,19 @@ public class Splash extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.splash);
+
+        TimerTask task = new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                finish();
+                startActivity(new Intent(Splash.this, Main.class));
+            }
+        };
+
+        Timer opening = new Timer();
+        opening.schedule(task,3000);
     }
 }

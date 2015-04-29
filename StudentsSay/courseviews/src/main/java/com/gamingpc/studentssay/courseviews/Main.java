@@ -1,44 +1,63 @@
 package com.gamingpc.studentssay.courseviews;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import controller.Courses;
 
-
-public class Main extends ActionBarActivity
+public class Main extends Activity
 {
+    Button searchBtn, browseBtn;
+    EditText courseNum;
+    int courseNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        searchBtn = (Button)findViewById(R.id.enter_button);
+        browseBtn = (Button)findViewById(R.id.browse_button); //ok
+        courseNum = (EditText)findViewById(R.id.editText); //ok
+
+        browseBtn.setOnClickListener(new BrowsingListener());
+        searchBtn.setOnClickListener(new SearchingListener());
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    //compeleted!
+    class BrowsingListener implements View.OnClickListener
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+        @Override
+        public void onClick(View view)
         {
-            return true;
+            startActivity(new Intent(Main.this, Browse.class));
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    //completed!
+    class SearchingListener implements View.OnClickListener
+    {
+        @Override
+        public void onClick(View view)
+        {
+            //if get request with num rerun
+            courseNumber = Integer.parseInt(courseNum.getText().toString());
+
+            if (Courses.getCourseList().containsKey(courseNumber))
+            {
+                startActivity(new Intent(Main.this, Summary.class));
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "A course could not be found", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
