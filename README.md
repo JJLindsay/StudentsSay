@@ -6,7 +6,7 @@ This app will help users build better class schedules.
 
 #####8+ Concepts (to-be-added)
 <ul>
-<li>Splash Screen <b><completed></b></li>
+<li>Splash Screen <b>completed</b></li>
 <li>Custom Launcher <b>completed</b></li>
 <li>Multiple Activities <b>in progress</b></li>
 <li>Custom Views <b>completed</b></li> 
