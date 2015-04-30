@@ -10,10 +10,10 @@ This app will help users build better class schedules.
 <li>Custom Launcher <b>completed</b></li>
 <li>Multiple Activities <b>in progress</b></li>
 <li>Custom Views <b>completed</b></li> 
-<li>GridView <b>completed??</b></li>
+<li><del>GridView</del> <b>RelativeLayout/LinearLayout</b></li>
 <li>Fragments</li>
 <li>ListView <b>in progress</b></li>
 <li>Multimedia <b>in progress</b></li> 
-<li>Restfulweb Services</li>
+<li>Restfulweb Services <b>in progress</b></li>
 <li><del>Ruby-On-Rails</del> <b>using php/jquery instead</b></li>
 </ul>
