@@ -7,6 +7,7 @@ import android.widget.*;
 import controller.Course;
 import controller.Courses;
 import controller.Review;
+import controller.Reviews;
 
 /**
  * author: JJ Lindsay
@@ -26,10 +27,10 @@ public class AddReview extends Activity
     EditText careerIntern, tools;
     TextView title;
     float discrete = 0;
-    float start = 0;
-    float end = 3;
+//    float start = 0;
+//    float end = 3;
     float start_pos = 0;
-    int start_position = 0;
+//    int start_position = 0;
     int p;
 
     @Override
@@ -54,10 +55,10 @@ public class AddReview extends Activity
         ratingBar2.setNumStars(5);
         ratingBar3.setNumStars(5);
 
-        //sets the step of the rating 0.0 - 1
-        ratingBar1.setStepSize(1);
-        ratingBar2.setStepSize(1);
-        ratingBar3.setStepSize(1);
+        //sets the step of the rating 0.0f - 1f
+        ratingBar1.setStepSize(1.0f);
+        ratingBar2.setStepSize(1.0f);
+        ratingBar3.setStepSize(1.0f);
 
 //        start_position = (int)(((start_pos-start)/(end-start))*100);
         discrete = start_pos;
@@ -83,9 +84,12 @@ public class AddReview extends Activity
             {
                 Review review = new Review(Course.getCourseNumber(), readBk, goodBk, projects, p,
                         careerIntern.getText().toString(), tools.getText().toString());
-                //send this as a post not get to website
+
+                //this is to post to the website
                 new ReviewAdapter().postReview(review);
 
+                //updates the list on the device, retrieved via HTTPGet request during the Splash Screen
+                Reviews.addReview(review);
                 Toast.makeText(getApplicationContext(), "Excellent! Your review has been added.", Toast.LENGTH_LONG).show();
 
             }
@@ -123,11 +127,10 @@ public class AddReview extends Activity
         @Override
         public void onStopTrackingTouch(SeekBar seekBar)
         {
-            if (p<30)
-            {
-                p=30;
+//            if (p<30)
+//            {
                 seeker.setProgress(p);
-            }
+//            }
         }
     }
 }

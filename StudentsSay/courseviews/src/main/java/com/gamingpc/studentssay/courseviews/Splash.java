@@ -3,6 +3,7 @@ package com.gamingpc.studentssay.courseviews;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import controller.Reviews;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,6 +25,7 @@ public class Splash extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+        Reviews.pullLatestReviews();
 
         TimerTask task = new TimerTask()
         {

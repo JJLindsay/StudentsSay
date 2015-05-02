@@ -1,6 +1,5 @@
 package controller;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -71,6 +70,10 @@ public class Courses
         return courseList;
     }
 
+    /**
+     * This returns a courseList in an array, a format usable by listActivity
+     * @return courseList in arrayList form
+     */
     public static String[] getAdapterList()
     {
         temp = new String[courseList.size()];

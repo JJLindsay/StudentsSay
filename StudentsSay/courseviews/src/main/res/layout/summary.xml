@@ -16,7 +16,7 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="#ff6eb4e2"
-            android:gravity="center" android:layout_below="@+id/textView">
+            android:gravity="center" android:layout_below="@+id/textView" android:id="@+id/relativeLayout2">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,8 +122,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:id="@+id/button" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="false" android:background="#ff6eb4e2" android:textSize="25sp"
+            android:id="@+id/button" android:layout_alignParentBottom="true" android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="true" android:background="#ff6eb4e2" android:textSize="25sp"
             android:textColor="#fff" android:gravity="center_vertical|center_horizontal" android:clickable="true"
             android:textAlignment="gravity" android:typeface="monospace" style="?android:attr/buttonStyleToggle"
             />
@@ -131,21 +131,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Review"
-            android:id="@+id/button4" android:layout_alignParentBottom="true" android:layout_toRightOf="@+id/button"
-            android:layout_toEndOf="@+id/button" android:background="#ff6eb4e2" android:textSize="25sp"
+            android:id="@+id/button4" android:layout_alignParentBottom="true"
+            android:background="#ff6eb4e2" android:textSize="25sp"
             android:textColor="#fff"
             android:clickable="true"
             android:textAlignment="gravity" android:typeface="monospace"
-            style="?android:attr/buttonStyleToggle" android:layout_marginRight="2dp" android:layout_marginLeft="2dp"/>
+            style="?android:attr/buttonStyleToggle" android:layout_marginRight="2dp" android:layout_marginLeft="2dp"
+            android:layout_centerHorizontal="true" android:layout_toLeftOf="@+id/button5"
+            android:layout_toRightOf="@+id/button"/>
     <Button
             style="?android:attr/buttonStyleInset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
             android:id="@+id/button5" android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/button4" android:layout_toRightOf="@+id/button4" android:background="#ff6eb4e2"
+            android:background="#ff6eb4e2"
             android:textSize="25sp"
             android:textColor="#fff" android:clickable="true"
-            android:textAlignment="gravity" android:layout_alignParentEnd="false"
-            android:layout_alignParentRight="true" android:typeface="monospace"/>
+            android:textAlignment="gravity"
+            android:typeface="monospace" android:layout_alignParentEnd="true" android:layout_alignParentRight="true"/>
 </RelativeLayout>

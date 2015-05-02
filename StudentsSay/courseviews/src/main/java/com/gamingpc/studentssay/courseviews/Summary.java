@@ -2,13 +2,16 @@ package com.gamingpc.studentssay.courseviews;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.*;
 import controller.Course;
+import controller.Review;
+import controller.Reviews;
+
+import java.util.ArrayList;
 
 /**
  * author: JJ Lindsay
@@ -22,10 +25,12 @@ import controller.Course;
  */
 public class Summary extends Activity
 {
-    RatingBar ratingBar1, ratingBar2, ratingBar3;
-    Button addReview, back, next;
-    SeekBar seeker;
-    TextView careerIntern, tools, title;
+    private RatingBar ratingBar1, ratingBar2, ratingBar3;
+    private Button addReview, back, next;
+    private SeekBar seeker;
+    private TextView careerIntern, tools, title;
+    private ArrayList<Review> currentCourseReviews;
+    private int currentPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -66,17 +71,49 @@ public class Summary extends Activity
 
 //        careerIntern.setText("Yes");
 //        tools.setText("Gimp/etc");
-        title.setText("Student Views On ITEC " + Course.getCourseNumber());
+//        title.setText("Student Views On ITEC " + Course.getCourseNumber());
 //        seeker.setProgress(25);
 
+        initialReview();
 
         addReview.setOnClickListener(new AddRevListener());
         back.setOnClickListener(new BackListener());
         next.setOnClickListener(new NextListener());
     }
 
+    private void initialReview()
+    {
+        currentCourseReviews = Reviews.getReviewsList();
+
+        if (currentCourseReviews == null || !(currentCourseReviews.size() > 0))
+        {
+            ratingBar1.setRating(0f);
+            ratingBar2.setRating(0f);
+            ratingBar3.setRating(0f);
+            title.setText("NO REVIEWS for ITEC " + Course.getCourseNumber());
+            title.setTextColor(Color.RED);
+            seeker.setProgress(0);
+            back.setEnabled(false);
+            next.setEnabled(false);
+
+        }
+        else
+        {
+            Log.d("Summary", "A" + currentCourseReviews.get(0).getGoodBk());
+
+            ratingBar1.setRating(currentCourseReviews.get(0).getReadBk());
+            ratingBar2.setRating(currentCourseReviews.get(0).getGoodBk());
+            ratingBar3.setRating(currentCourseReviews.get(0).getProjects());
+            careerIntern.setText(currentCourseReviews.get(0).getCareer());
+            tools.setText(currentCourseReviews.get(0).getTools());
+            title.setText("Student Views On ITEC " + Course.getCourseNumber());
+            seeker.setProgress(currentCourseReviews.get(0).getWorkload());
+            currentPos = 0;
+        }
+    }
+
     //completed!
-    class AddRevListener implements View.OnClickListener
+    private class AddRevListener implements View.OnClickListener
     {
         @Override
         public void onClick(View view)
@@ -85,21 +122,50 @@ public class Summary extends Activity
         }
     }
 
-    class BackListener implements View.OnClickListener
+    private class BackListener implements View.OnClickListener
     {
         @Override
         public void onClick(View view)
         {
+            if (currentPos > 0)
+            {
+                currentPos--;
+                ratingBar1.setRating(currentCourseReviews.get(currentPos).getReadBk());
+                ratingBar2.setRating(currentCourseReviews.get(currentPos).getGoodBk());
+                ratingBar3.setRating(currentCourseReviews.get(currentPos).getProjects());
+                careerIntern.setText(currentCourseReviews.get(currentPos).getCareer());
+                tools.setText(currentCourseReviews.get(currentPos).getTools());
+                title.setText("Student Views On ITEC " + Course.getCourseNumber());
+                seeker.setProgress(currentCourseReviews.get(currentPos).getWorkload());
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "This is the first review.", Toast.LENGTH_LONG).show();
 
+            }
         }
     }
 
-    class NextListener implements View.OnClickListener
+    private class NextListener implements View.OnClickListener
     {
         @Override
         public void onClick(View view)
         {
-
+            if (currentPos < currentCourseReviews.size()-1)
+            {
+                currentPos++;
+                ratingBar1.setRating(currentCourseReviews.get(currentPos).getReadBk());
+                ratingBar2.setRating(currentCourseReviews.get(currentPos).getGoodBk());
+                ratingBar3.setRating(currentCourseReviews.get(currentPos).getProjects());
+                careerIntern.setText(currentCourseReviews.get(currentPos).getCareer());
+                tools.setText(currentCourseReviews.get(currentPos).getTools());
+                title.setText("Student Views On ITEC " + Course.getCourseNumber());
+                seeker.setProgress(currentCourseReviews.get(currentPos).getWorkload());
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "This is the last review.", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

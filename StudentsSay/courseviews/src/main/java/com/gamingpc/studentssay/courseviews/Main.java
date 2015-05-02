@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import controller.Course;
 import controller.Courses;
+import controller.Reviews;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -59,6 +60,8 @@ public class Main extends Activity
             if (Courses.getCourseList().containsKey(courseNumber))
             {
                 new Course(courseNumber);
+                Reviews.findReviews(courseNumber);
+
                 //once the number is collected, send it to the server and
                 //create an arrayList or LinkedHashList for order
                 startActivity(new Intent(Main.this, Summary.class));

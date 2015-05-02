@@ -16,7 +16,8 @@ import java.util.Set;
  */
 public class Review
 {
-    int readBk, goodBk, projects, workload;
+    float readBk, goodBk, projects;
+    int workload;
     String career, tools;
     int courseNum;
     static ArrayList<Review> reviewList = new ArrayList<Review>();
@@ -32,7 +33,7 @@ public class Review
         this.tools = aTools;
     }
 
-    public int getReadBk()
+    public float getReadBk()
     {
         return readBk;
     }
@@ -42,7 +43,7 @@ public class Review
         this.readBk = readBk;
     }
 
-    public int getGoodBk()
+    public float getGoodBk()
     {
         return goodBk;
     }
@@ -52,7 +53,7 @@ public class Review
         this.goodBk = goodBk;
     }
 
-    public int getProjects()
+    public float getProjects()
     {
         return projects;
     }

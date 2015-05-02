@@ -12,8 +12,8 @@ package controller;
  */
 public class Course
 {
-    static int courseNumber;
-    static String courseName;
+    private static int courseNumber;
+    private static String courseName;
 
     private Course(int aCourseNumber, String aCourseName)
     {
@@ -23,9 +23,10 @@ public class Course
 
     public Course(int aCourseNumber)
     {
-        Course.courseNumber = aCourseNumber;
-        //this uses the key to get the value, in this case the course name
-        Course.courseName = Courses.getCourseList().get(aCourseNumber);
+//        Course.courseNumber = aCourseNumber;
+//        //this uses the key to get the value, in this case the course name
+//        Course.courseName = Courses.getCourseList().get(aCourseNumber);
+        this(aCourseNumber, Courses.getCourseList().get(aCourseNumber));
     }
 
     public static int getCourseNumber()

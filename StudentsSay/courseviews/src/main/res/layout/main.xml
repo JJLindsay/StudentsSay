@@ -21,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:ems="10"
             android:id="@+id/editText" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
             android:hint="Enter an ITEC Number" android:textSize="30sp" android:gravity="center_vertical|center_horizontal"
             android:textColorHint="#ff6eb4e2" android:backgroundTint="#ff6eb4e2" android:textColor="#ff6eb4e2"/>

@@ -10,11 +10,11 @@
         android:icon="@drawable/splash_icon"
         android:label="@string/app_name"
         android:theme="@style/Base.Theme.AppCompat"
-            >
+         >
         <activity
             android:name="com.gamingpc.studentssay.courseviews.Splash"
             android:label="@string/app_name"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +22,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Main"/>
-        <activity android:name=".AddReview"/>
-        <activity android:name=".Browse"/>
-        <activity android:name=".Summary"/>
+        <activity android:name=".Main"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".AddReview"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Browse"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Summary"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

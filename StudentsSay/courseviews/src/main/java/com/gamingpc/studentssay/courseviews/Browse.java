@@ -8,6 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import controller.Course;
 import controller.Courses;
+import controller.Review;
+import controller.Reviews;
+
+import java.util.ArrayList;
 
 /**
  * author: JJ Lindsay
@@ -25,7 +29,7 @@ public class Browse extends ListActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.browse, R.id.iteccources, Courses.getAdapterList()));
+        setListAdapter(new ArrayAdapter<>(this, R.layout.browse, R.id.iteccources, Courses.getAdapterList()));
 
         //works
 //        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, temp));
@@ -39,6 +43,8 @@ public class Browse extends ListActivity
         String selectedItem = (String)getListView().getItemAtPosition(position);
         int itecNum = Integer.parseInt(selectedItem.substring(0, 4));
         new Course(itecNum);
+
+        Reviews.findReviews(itecNum);
 
         startActivity(new Intent(Browse.this, Summary.class));
     }

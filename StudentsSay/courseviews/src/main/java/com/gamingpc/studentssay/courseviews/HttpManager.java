@@ -1,33 +1,13 @@
 package com.gamingpc.studentssay.courseviews;
 
-
-
-/**
- * author: JJ Lindsay
- * version: 1.0
- * Course: ITEC 4550 Spring 2015
- * Written: 4/13/2015
- *
- * This class represents a ...
- *
- * Purpose: Allows the manipulation of a ...
- */
-
 import android.util.Log;
-import android.widget.Toast;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-
 
 import java.io.*;
 
@@ -36,10 +16,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-/**STANDARD Android Design Pattern
+/**
+ * author: JJ Lindsay
+ * version: 1.0
+ * Course: ITEC 4550 Spring 2015
+ * Written: 4/13/2015
+ *
+ * This class represents a STANDARD Android Design Pattern
  * HttpURLConnection is constantly being updated, which is why its preferred over the alternative
  * Allows for making a request and get back a response you can call anywhere in the Android app
- * Created by JON-JULIUS on 3/26/2015.
+ *
+ * Purpose: Allows for HTTP Requests
  */
 public class HttpManager
 {
@@ -60,6 +47,7 @@ public class HttpManager
             {
                 sb.append(line + "\n");
             }
+            Log.d("HTTP GET", "HTTP GET REQUEST: OK");
             return sb.toString();
         }
         catch (Exception e)
@@ -77,7 +65,6 @@ public class HttpManager
                 catch (Exception e)
                 {
                     e.printStackTrace();
-                    return null;
                 }
             }
         }
@@ -187,7 +174,7 @@ public class HttpManager
 //            Toast.makeText(new AddReview(), "Post status: " + status, Toast.LENGTH_LONG).show();
 
 //            HttpEntity entity = response.getEntity();
-            Log.d("HTTP", "HTTP: OK");
+            Log.d("HTTP POST", "HTTP POST REQUEST: OK");
         } catch (Exception e) {
             Log.e("HTTP", "Error in http connection " + e.toString());
         }
