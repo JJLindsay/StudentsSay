@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:background="#fff">
 
     <TextView
-    android:id="@+id/travel"
+    android:id="@+id/iteccources"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:text="@+id/travel"
+    android:text="@+id/iteccources"
     android:textSize="30sp" android:textColor="#fff" android:background="#ff6eb4e2"
     android:layout_gravity="center_horizontal" android:gravity="center_horizontal" android:textStyle="bold"
     android:textIsSelectable="false">

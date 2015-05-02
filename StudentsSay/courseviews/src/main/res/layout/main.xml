@@ -13,31 +13,32 @@
             android:layout_height="wrap_content"
             android:text="Browse ITEC Courses"
             android:id="@+id/browse_button"
-            android:layout_marginBottom="42dp" android:textSize="33dp" android:width="250dp"
+            android:textSize="33sp" android:width="250dp"
             android:background="#ff6eb4e2" android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+            android:gravity="bottom|center_horizontal" android:layout_centerInParent="true"
+            android:layout_above="@+id/textView14"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editText" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
-            android:hint="Enter an ITEC Number" android:textSize="30dp" android:gravity="center_vertical|center_horizontal"
-            android:textColorHint="#ff6eb4e2" android:backgroundTint="#ff6eb4e2"/>
+            android:hint="Enter an ITEC Number" android:textSize="30sp" android:gravity="center_vertical|center_horizontal"
+            android:textColorHint="#ff6eb4e2" android:backgroundTint="#ff6eb4e2" android:textColor="#ff6eb4e2"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find Your Course!"
             android:id="@+id/textView14" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
-            android:layout_marginTop="52dp" android:textSize="42dp" android:textColor="#ff6eb4e2"
+            android:layout_marginTop="52dp" android:textSize="42sp" android:textColor="#ff6eb4e2"
             android:textStyle="bold|italic" android:paddingRight="5dp"
             android:paddingLeft="5dp" android:singleLine="false"/>
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:text="Search"
             android:id="@+id/enter_button"
-            android:width="250dp" android:textSize="33dp" android:background="#ff6eb4e2"
+            android:width="250dp" android:textSize="33sp" android:background="#ff6eb4e2"
             android:layout_below="@+id/editText" android:layout_alignLeft="@+id/browse_button"
             android:layout_alignStart="@+id/browse_button" android:layout_marginTop="20dp"/>
 

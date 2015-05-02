@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:background="#ffffff">
+                android:layout_height="match_parent" android:background="#ffffff" android:gravity="center_vertical|center_horizontal">
 
     <TextView
             android:layout_width="wrap_content"
@@ -9,18 +9,17 @@
             android:text="Studens Say: Course Reviews"
             android:id="@+id/textView12"
             android:textColor="#ffffff"
-            android:textColorHighlight="#000000" android:textSize="40dp"
+            android:textSize="40sp"
             android:textStyle="normal|bold|italic"
             android:gravity="center_vertical|center_horizontal"
-            android:inputType="none" android:minWidth="300dp" android:maxWidth="300dp"
+            android:inputType="none" android:maxWidth="300dp"
             android:background="#ff6eb4e2" android:layout_below="@+id/textView13"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerInParent="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView13"
             android:background="@drawable/splash_icon"
-            android:scrollHorizontally="false" android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-            android:layout_marginTop="58dp"/>
+            android:scrollHorizontally="false"
+            />
 </RelativeLayout>

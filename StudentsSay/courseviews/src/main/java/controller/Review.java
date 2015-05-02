@@ -1,5 +1,9 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * author: JJ Lindsay
  * version: 1.0
@@ -15,6 +19,7 @@ public class Review
     int readBk, goodBk, projects, workload;
     String career, tools;
     int courseNum;
+    static ArrayList<Review> reviewList = new ArrayList<Review>();
 
     public Review(int courseNumber, int aReadBk, int aGoodBk, int aProjects, int aWorkload, String aCareer, String aTools)
     {
@@ -85,5 +90,25 @@ public class Review
     public void setTools(String tools)
     {
         this.tools = tools;
+    }
+
+    public int getCourseNum()
+    {
+        return courseNum;
+    }
+
+    public void setCourseNum(int courseNum)
+    {
+        this.courseNum = courseNum;
+    }
+
+    public static ArrayList<Review> getReviewList()
+    {
+        return reviewList;
+    }
+
+    public void addReview(Review review)
+    {
+        reviewList.add(review);
     }
 }

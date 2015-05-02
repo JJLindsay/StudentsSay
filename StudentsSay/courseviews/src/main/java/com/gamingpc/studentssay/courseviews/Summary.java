@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import controller.Course;
 
 /**
  * author: JJ Lindsay
@@ -24,7 +25,7 @@ public class Summary extends Activity
     RatingBar ratingBar1, ratingBar2, ratingBar3;
     Button addReview, back, next;
     SeekBar seeker;
-    TextView careerIntern, tools;
+    TextView careerIntern, tools, title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,8 +41,34 @@ public class Summary extends Activity
         ratingBar1 = (RatingBar)findViewById(R.id.ratingBar);
         ratingBar2 = (RatingBar)findViewById(R.id.ratingBar2);
         ratingBar3 = (RatingBar)findViewById(R.id.ratingBar3);
-        seeker = (SeekBar)findViewById(R.id.seekBar);
-        seeker.setVisibility(View.VISIBLE);
+        seeker = (SeekBar)findViewById(R.id.seekBar2);
+        title = (TextView)findViewById(R.id.textView);
+//        back.setVisibility(View.INVISIBLE);
+
+        //set seekbar to unchangeable
+        seeker.setEnabled(false);
+
+        //rtBar1, 2, 3 & seekBar2 & career & tools
+        //sets the number of stars that will be fillable
+        ratingBar1.setNumStars(5);
+        ratingBar2.setNumStars(5);
+        ratingBar3.setNumStars(5);
+
+        //sets the rating bar to unchangeable
+        ratingBar1.setIsIndicator(true);
+        ratingBar2.setIsIndicator(true);
+        ratingBar3.setIsIndicator(true);
+
+        //set the stars that are filled
+//        ratingBar1.setRating(2.0f);
+//        ratingBar2.setRating(1.0f);
+//        ratingBar3.setRating(4.0f);
+
+//        careerIntern.setText("Yes");
+//        tools.setText("Gimp/etc");
+        title.setText("Student Views On ITEC " + Course.getCourseNumber());
+//        seeker.setProgress(25);
+
 
         addReview.setOnClickListener(new AddRevListener());
         back.setOnClickListener(new BackListener());
@@ -51,7 +78,6 @@ public class Summary extends Activity
     //completed!
     class AddRevListener implements View.OnClickListener
     {
-
         @Override
         public void onClick(View view)
         {
@@ -61,7 +87,6 @@ public class Summary extends Activity
 
     class BackListener implements View.OnClickListener
     {
-
         @Override
         public void onClick(View view)
         {
@@ -71,7 +96,6 @@ public class Summary extends Activity
 
     class NextListener implements View.OnClickListener
     {
-
         @Override
         public void onClick(View view)
         {

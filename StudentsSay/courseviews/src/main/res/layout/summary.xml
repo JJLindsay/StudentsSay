@@ -2,81 +2,85 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="#fff">
+              android:layout_height="match_parent" android:background="#fff"
+                android:gravity="center_vertical|center_horizontal">
 
     <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What Students Say About ITEC 2120"
+            android:text="Student Views On ITEC 2120"
             android:id="@+id/textView"
-            android:textSize="40sp"
-            android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:textColor="#ff6eb4e2"
+            android:textSize="35sp"
+            android:textColor="#ff6eb4e2"
             android:textStyle="bold"/>
     <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="#ff6eb4e2">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="#ff6eb4e2"
+            android:gravity="center" android:layout_below="@+id/textView">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Read Book:"
-                android:id="@+id/textView2" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" android:background="#ff6eb4e2"
-                android:textSize="30sp" android:textColor="#FFF" android:layout_marginBottom="8sp"
-                android:layout_marginTop="7sp"/>
+                android:text="Read Book?"
+                android:id="@+id/textView2" android:layout_alignParentTop="false" android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:textSize="30sp" android:textColor="#FFF"
+                />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Good Book:"
-                android:id="@+id/textView3" android:layout_below="@+id/textView2" android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" android:background="#ff6eb4e2" android:textSize="30sp"
-                android:textColor="#FFF" android:layout_marginBottom="8sp" android:layout_marginTop="7sp"/>
+                android:text="Good Book?"
+                android:id="@+id/textView3" android:layout_below="@+id/textView2" android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="true" android:textSize="30sp"
+                android:textColor="#FFF"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Cool\n  Projects:"
-                android:id="@+id/textView4" android:layout_below="@+id/textView3" android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" android:background="#ff6eb4e2" android:textSize="30sp"
-                android:textColor="#FFF" android:layout_marginBottom="8sp"/>
+                android:text="Cool\n  Projects?"
+                android:id="@+id/textView4" android:layout_below="@+id/textView3" android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="true" android:textSize="30sp"
+                android:textColor="#FFF"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Work Load:"
                 android:id="@+id/textView5" android:layout_below="@+id/textView4"
-                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                android:background="#ff6eb4e2" android:textSize="30sp" android:textColor="#FFF"
-                android:layout_marginBottom="8sp"/>
+                android:layout_alignParentLeft="false" android:layout_alignParentStart="true"
+                android:textSize="30sp" android:textColor="#FFF"
+                />
         <RatingBar
                 android:layout_width="wrap_content"
-                android:layout_height="50sp"
+                android:layout_height="wrap_content"
                 android:id="@+id/ratingBar"
-                android:minHeight="35sp"
+                android:minHeight="40dp"
                 android:layout_toRightOf="@+id/textView2" android:layout_toEndOf="@+id/textView2"
-                android:background="#ff6eb4e2"/>
+                android:layout_marginTop="-5dp"/>
         <RatingBar
                 android:layout_width="wrap_content"
-                android:layout_height="50sp"
+                android:layout_height="wrap_content"
                 android:id="@+id/ratingBar2"
-                android:minHeight="40sp" android:layout_below="@+id/ratingBar"
-                android:layout_toRightOf="@+id/textView3" android:layout_toEndOf="@+id/textView3"
-                android:background="#ff6eb4e2" android:layout_marginLeft="-3sp"/>
+                android:minHeight="40dp"
+                android:layout_toRightOf="@+id/textView3" android:layout_alignTop="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3"
+                />
         <RatingBar
                 android:layout_width="wrap_content"
-                android:layout_height="50sp"
-                android:id="@+id/ratingBar3" android:layout_below="@+id/ratingBar2"
-                android:layout_toRightOf="@+id/textView5" android:layout_toEndOf="@+id/textView5"
-                android:minHeight="40dp" android:background="#ff6eb4e2" android:layout_marginTop="28sp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar3"
+                android:minHeight="40dp"
+                android:layout_toRightOf="@+id/textView4" android:layout_toEndOf="@+id/textView4"
+                android:layout_above="@+id/textView5" />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Career/intern\n     relevant:"
+                android:text="Career/intern\n     relevant?"
                 android:id="@+id/textView19"
-                android:layout_below="@+id/textView5" android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" android:background="#ff6eb4e2" android:textSize="30sp"
-                android:textColor="#FFF" android:layout_marginBottom="8sp"/>
+                android:layout_below="@+id/textView5" android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="true" android:textSize="30sp"
+                android:textColor="#FFF"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,62 +88,64 @@
                 android:text="tools/software\n used:"
                 android:id="@+id/textView20"
                 android:layout_below="@+id/textView19"
-                android:layout_alignParentLeft="true" android:background="#ff6eb4e2" android:textSize="30sp"
+                android:textSize="30sp"
                 android:textColor="#FFF"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No! :("
+                android:text="yes/no"
                 android:id="@+id/textView21"
-                android:layout_toRightOf="@+id/textView19" android:layout_toEndOf="@+id/textView19"
-                android:textAlignment="center" android:background="#ff6eb4e2" android:textSize="30sp"
-                android:textColor="#fff" android:layout_alignParentRight="false"
-                android:layout_marginTop="40sp" android:layout_marginBottom="5sp" android:layout_marginLeft="70sp"
-                android:layout_below="@+id/seekBar2"/>
+                android:textSize="30sp"
+                android:textColor="#fff" android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/textView19" android:layout_toRightOf="@+id/textView19"
+                android:layout_toEndOf="@+id/textView19"
+                android:gravity="center"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Eclipse"
-                android:id="@+id/textView22" android:layout_alignTop="@+id/textView20"
-                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
-                android:background="#ff6eb4e2" android:textSize="30sp" android:textColor="#fff"
-                android:layout_alignParentBottom="false" android:layout_marginRight="45sp"
-                android:layout_marginEnd="45sp" android:layout_marginTop="20sp"/>
+                android:text="Gimp/etc."
+                android:id="@+id/textView22"
+                android:layout_alignParentEnd="false"
+                android:textSize="30sp" android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/textView20"/>
         <SeekBar
-                android:layout_width="400sp"
-                android:layout_height="50sp"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/seekBar2"
-                android:layout_toRightOf="@+id/textView5" android:layout_toEndOf="@+id/textView5"
-                android:visibility="visible" android:layout_below="@+id/ratingBar3"
-                />
+                android:visibility="visible"
+                android:max="50" android:clickable="false" android:background="#fff"
+                android:layout_toRightOf="@+id/textView5" android:layout_below="@+id/textView4"
+                android:layout_toEndOf="@+id/textView5"/>
     </RelativeLayout>
     <Button
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
             android:id="@+id/button" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:background="#ff6eb4e2" android:textSize="33sp"
+            android:layout_alignParentStart="false" android:background="#ff6eb4e2" android:textSize="25sp"
             android:textColor="#fff" android:gravity="center_vertical|center_horizontal" android:clickable="true"
-            android:textAlignment="gravity"/>
+            android:textAlignment="gravity" android:typeface="monospace" style="?android:attr/buttonStyleToggle"
+            />
     <Button
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Review"
             android:id="@+id/button4" android:layout_alignParentBottom="true" android:layout_toRightOf="@+id/button"
-            android:layout_toEndOf="@+id/button" android:background="#ff6eb4e2" android:textSize="33sp"
-            android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
-            android:layout_marginLeft="10sp" android:layout_marginRight="10sp" android:clickable="true"
-            android:textAlignment="gravity"/>
+            android:layout_toEndOf="@+id/button" android:background="#ff6eb4e2" android:textSize="25sp"
+            android:textColor="#fff"
+            android:clickable="true"
+            android:textAlignment="gravity" android:typeface="monospace"
+            style="?android:attr/buttonStyleToggle" android:layout_marginRight="2dp" android:layout_marginLeft="2dp"/>
     <Button
-            style="?android:attr/buttonStyleSmall"
+            style="?android:attr/buttonStyleInset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
-            android:id="@+id/button5" android:layout_alignParentBottom="true" android:layout_toRightOf="@+id/button4"
-            android:layout_toEndOf="@+id/button4" android:background="#ff6eb4e2" android:textSize="33sp"
-            android:textColor="#fff" android:gravity="center_vertical|center_horizontal" android:clickable="true"
-            android:textAlignment="gravity"/>
+            android:id="@+id/button5" android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/button4" android:layout_toRightOf="@+id/button4" android:background="#ff6eb4e2"
+            android:textSize="25sp"
+            android:textColor="#fff" android:clickable="true"
+            android:textAlignment="gravity" android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="true" android:typeface="monospace"/>
 </RelativeLayout>

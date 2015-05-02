@@ -12,23 +12,30 @@ package controller;
  */
 public class Course
 {
-    int courseNumber;
-    String courseName;
+    static int courseNumber;
+    static String courseName;
 
-    private Course(int aCouseNumber, String aCourseName)
+    private Course(int aCourseNumber, String aCourseName)
     {
-        this.courseNumber = aCouseNumber;
-        this.courseName = aCourseName;
+        Course.courseNumber = aCourseNumber;
+        Course.courseName = aCourseName;
     }
 
-    public int getCourseNumber()
+    public Course(int aCourseNumber)
+    {
+        Course.courseNumber = aCourseNumber;
+        //this uses the key to get the value, in this case the course name
+        Course.courseName = Courses.getCourseList().get(aCourseNumber);
+    }
+
+    public static int getCourseNumber()
     {
         return courseNumber;
     }
 
     private void setCourseNumber(int courseNumber)
     {
-        this.courseNumber = courseNumber;
+        Course.courseNumber = courseNumber;
     }
 
     public String getCourseName()
@@ -38,6 +45,6 @@ public class Course
 
     private void setCourseName(String courseName)
     {
-        this.courseName = courseName;
+        Course.courseName = courseName;
     }
 }

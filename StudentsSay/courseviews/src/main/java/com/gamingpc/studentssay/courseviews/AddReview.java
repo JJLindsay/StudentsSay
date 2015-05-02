@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import controller.Course;
+import controller.Courses;
 import controller.Review;
 
 /**
@@ -21,7 +23,8 @@ public class AddReview extends Activity
     RatingBar ratingBar1, ratingBar2, ratingBar3;
     Button submit;
     SeekBar seeker;
-    TextView careerIntern, tools;
+    EditText careerIntern, tools;
+    TextView title;
     float discrete = 0;
     float start = 0;
     float end = 3;
@@ -35,18 +38,30 @@ public class AddReview extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_review);
 
+        title = (TextView)findViewById(R.id.textView7);
         submit = (Button)findViewById(R.id.button3);
-        careerIntern = (TextView)findViewById(R.id.textView17);
-        tools = (TextView)findViewById(R.id.textView18);
+        careerIntern = (EditText)findViewById(R.id.edittext17);
+        tools = (EditText)findViewById(R.id.edittext18);
         ratingBar1 = (RatingBar)findViewById(R.id.ratingBar4);
         ratingBar2 = (RatingBar)findViewById(R.id.ratingBar5);
         ratingBar3 = (RatingBar)findViewById(R.id.ratingBar6);
         seeker = (SeekBar)findViewById(R.id.seekBar);
-        seeker.setVisibility(View.VISIBLE);
 
-        start_position = (int)(((start_pos-start)/(end-start))*100);
+        title.setText("ITEC " + Course.getCourseNumber()+ " " + Courses.getCourseList().get(Course.getCourseNumber()));
+
+        //sets the number of visible stars
+        ratingBar1.setNumStars(5);
+        ratingBar2.setNumStars(5);
+        ratingBar3.setNumStars(5);
+
+        //sets the step of the rating 0.0 - 1
+        ratingBar1.setStepSize(1);
+        ratingBar2.setStepSize(1);
+        ratingBar3.setStepSize(1);
+
+//        start_position = (int)(((start_pos-start)/(end-start))*100);
         discrete = start_pos;
-        seeker.setProgress(start_position);
+        seeker.setProgress(0);
 
 
         submit.setOnClickListener(new SubmitListener());
@@ -64,10 +79,15 @@ public class AddReview extends Activity
             int goodBk = (int)ratingBar2.getRating();
             int projects = (int)ratingBar3.getRating();
 
-            if (p >= 0 && careerIntern.toString() != null && tools.toString() != null)
+            if (p >= 0 && !(careerIntern.getText().toString().equals("")) && !(tools.getText().toString().equals("")))
             {
-                Review review = new Review(2120, readBk, goodBk, projects, p, careerIntern.toString(), tools.toString());
+                Review review = new Review(Course.getCourseNumber(), readBk, goodBk, projects, p,
+                        careerIntern.getText().toString(), tools.getText().toString());
                 //send this as a post not get to website
+                new ReviewAdapter().postReview(review);
+
+                Toast.makeText(getApplicationContext(), "Excellent! Your review has been added.", Toast.LENGTH_LONG).show();
+
             }
             else
             {
@@ -89,7 +109,7 @@ public class AddReview extends Activity
              */
             //This is a textView being set with the progress
             //seekBarValue.setText(String.valueOf(progress));
-            p=progress;
+            p=progress; //this can be seen moving automatically in log just after creating apk and running
 
 
         }
