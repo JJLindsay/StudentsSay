@@ -2,7 +2,7 @@
 
 Individually chosen, end of semester Mobile Application project.
 The idea behind this project is to incorporate 8+ concepts we have learned and expand on 1 beyond the course.
-<br/>This app's intended purpose is to help users build better class schedules for themselves.
+<br/><br/>This app's intended purpose is to help users build better class schedules for themselves.
 
 #####8+ Concepts (completed!)
 <ol>
