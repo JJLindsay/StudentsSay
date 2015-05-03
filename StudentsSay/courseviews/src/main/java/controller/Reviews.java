@@ -8,10 +8,8 @@ import java.util.ArrayList;
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 5/2/2015
- *
- * This class represents a
  *
  * Purpose: To retrieve all the corresponding reviews while hiding the how.
  */

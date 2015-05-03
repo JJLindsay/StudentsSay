@@ -17,6 +17,14 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+/**
+ * author: JJ Lindsay
+ * version: 1.0
+ * Course: ITEC 4550 - End of Semester Project
+ * Written: 4/2/2015
+ *
+ * Purpose: To inflate the main sceen holding the search and browse buttons
+ */
 public class Main extends Activity
 {
     Button searchBtn, browseBtn;
@@ -54,21 +62,26 @@ public class Main extends Activity
         @Override
         public void onClick(View view)
         {
-            //if get request with num rerun
-            courseNumber = Integer.parseInt(courseNum.getText().toString());
-
-            if (Courses.getCourseList().containsKey(courseNumber))
+            if (courseNum.getText().length() > 3)
             {
-                new Course(courseNumber);
-                Reviews.findReviews(courseNumber);
+                //if get request with num rerun
+                courseNumber = Integer.parseInt(courseNum.getText().toString());
 
-                //once the number is collected, send it to the server and
-                //create an arrayList or LinkedHashList for order
-                startActivity(new Intent(Main.this, Summary.class));
-            }
-            else
+                if (Courses.getCourseList().containsKey(courseNumber))
+                {
+                    new Course(courseNumber);
+                    Reviews.findReviews(courseNumber);
+
+                    //once the number is collected, send it to the server and
+                    //create an arrayList or LinkedHashList for order
+                    startActivity(new Intent(Main.this, Summary.class));
+                } else
+                {
+                    Toast.makeText(getApplicationContext(), "Your course could not be found", Toast.LENGTH_LONG).show();
+                }
+            } else
             {
-                Toast.makeText(getApplicationContext(), "Your course could not be found", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Course numbers must be 4 digits", Toast.LENGTH_LONG).show();
             }
         }
     }

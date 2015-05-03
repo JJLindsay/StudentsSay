@@ -1,23 +1,17 @@
 package com.gamingpc.studentssay.courseviews;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import controller.Review;
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.TimerTask;
 
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/30/2015
  *
- * This class represents a ...
- *
- * Purpose: Allows the manipulation of a ...
+ * Purpose: To allow the parsing and packing of reviews for the rest of the app and for HTTP Requests
  */
 public class ReviewAdapter
 {
@@ -147,14 +141,10 @@ public class ReviewAdapter
      */
     public static void updateRawData(Review review)
     {
-        String temp = "\n" + review.getCourseNum() + "\t" + review.getReadBk() + "\t" + review.getGoodBk() + "\t" +
-        review.getProjects() + "\t" + review.getWorkload() + "\t" + review.getCareer() + "\t" + review.getTools();
+        String temp = "\n" + review.getCourseNum() + "\t" + (int)review.getReadBk() + "\t" + (int)review.getGoodBk() + "\t" +
+                (int)review.getProjects() + "\t" + review.getWorkload() + "\t" + review.getCareer() + "\t" + review.getTools();
 
         //update the raw Data review string
         rawReviews += temp;
-
-
-//        String tem = ""+review.getCourseNum()""	 "+review.getReadBk()"	 "+"review.getGoodBk()	 "+
-//                "review.getProjects()	 "+"review.getWorkload()	 "+"review.getCareer()	 "+"review.getTools()";
     }
 }

@@ -1,6 +1,7 @@
 package com.gamingpc.studentssay.courseviews;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -12,10 +13,8 @@ import controller.Reviews;
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/2/2015
- *
- * This class represents a ...
  *
  * Purpose: Allows the manipulation of a ...
  */
@@ -91,7 +90,7 @@ public class AddReview extends Activity
                 //updates the list on the device, retrieved via HTTPGet request during the Splash Screen
                 Reviews.addReview(review);
                 Toast.makeText(getApplicationContext(), "Excellent! Your review has been added.", Toast.LENGTH_LONG).show();
-
+                startActivity(new Intent(AddReview.this, Main.class));
             }
             else
             {

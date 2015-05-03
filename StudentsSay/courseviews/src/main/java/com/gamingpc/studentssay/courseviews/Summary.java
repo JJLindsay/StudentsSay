@@ -16,12 +16,10 @@ import java.util.ArrayList;
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/2/2015
  *
- * This class represents a ...
- *
- * Purpose: Allows the manipulation of a ...
+ * Purpose: To display the summary page and handle the display of the reviews
  */
 public class Summary extends Activity
 {
@@ -48,7 +46,6 @@ public class Summary extends Activity
         ratingBar3 = (RatingBar)findViewById(R.id.ratingBar3);
         seeker = (SeekBar)findViewById(R.id.seekBar2);
         title = (TextView)findViewById(R.id.textView);
-//        back.setVisibility(View.INVISIBLE);
 
         //set seekbar to unchangeable
         seeker.setEnabled(false);
@@ -63,16 +60,6 @@ public class Summary extends Activity
         ratingBar1.setIsIndicator(true);
         ratingBar2.setIsIndicator(true);
         ratingBar3.setIsIndicator(true);
-
-        //set the stars that are filled
-//        ratingBar1.setRating(2.0f);
-//        ratingBar2.setRating(1.0f);
-//        ratingBar3.setRating(4.0f);
-
-//        careerIntern.setText("Yes");
-//        tools.setText("Gimp/etc");
-//        title.setText("Student Views On ITEC " + Course.getCourseNumber());
-//        seeker.setProgress(25);
 
         initialReview();
 
@@ -95,7 +82,6 @@ public class Summary extends Activity
             seeker.setProgress(0);
             back.setEnabled(false);
             next.setEnabled(false);
-
         }
         else
         {
@@ -141,7 +127,6 @@ public class Summary extends Activity
             else
             {
                 Toast.makeText(getApplicationContext(), "This is the first review.", Toast.LENGTH_LONG).show();
-
             }
         }
     }

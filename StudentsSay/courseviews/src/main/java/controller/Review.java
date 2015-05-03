@@ -1,18 +1,14 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/26/2015
  *
- * This class represents a ...
- *
- * Purpose: Allows the manipulation of a ...
+ * Purpose: To create a single review
  */
 public class Review
 {

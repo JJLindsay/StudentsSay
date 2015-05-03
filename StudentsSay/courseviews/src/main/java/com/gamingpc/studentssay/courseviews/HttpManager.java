@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/13/2015
  *
  * This class represents a STANDARD Android Design Pattern
@@ -72,85 +72,6 @@ public class HttpManager
 
     public static void postData(String url, String[] parameters)
     {
-//        URL url = new URL(uri);
-//        URLConnection conn = url.openConnection();
-//        conn.setDoOutput(true);
-//        OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-//
-////        writer.write("value=1&anotherValue=1");
-//        writer.write(parameters);
-//        writer.flush();
-//        String line;
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-//        while ((line = reader.readLine()) != null) {
-//            System.out.println(line);
-//        }
-//        writer.close();
-//        reader.close();
-
-          //--------------------SECOND ATTEMPT-----------------------------
-//        try
-//        {
-//            Request.Post(uri)
-//                    .bodyForm(Form.form().add(parameters[0], parameters[1])
-//                            .add(parameters[2], parameters[3])
-//                            .add(parameters[4], parameters[5])
-//                            .add(parameters[6], parameters[7])
-//                            .add(parameters[8], parameters[9])
-//                            .add(parameters[10], parameters[11])
-//                            .add(parameters[12], parameters[13]).build())
-//                    .execute().returnContent();
-//        } catch (IOException e)
-//        {
-//            e.printStackTrace();
-//        }
-
-
-          //---------------------THIRD ATTEMPT-------------------------
-//        // Creating HTTP client
-//        HttpClient httpClient = new DefaultHttpClient();
-//
-//        // Creating HTTP Post
-//        HttpPost httpPost = new HttpPost(uri);
-//
-//        // Building post parameters, key and value pair
-//        List<NameValuePair> nameValuePair = new ArrayList<>(7);
-//        nameValuePair.add(new BasicNameValuePair(parameters[0], parameters[1]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[2], parameters[3]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[4], parameters[5]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[6], parameters[7]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[8], parameters[9]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[10], parameters[11]));
-//        nameValuePair.add(new BasicNameValuePair(parameters[12], parameters[13]));
-//
-//        // Url Encoding the POST parameters
-//        try {
-//            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
-//        }
-//        catch (UnsupportedEncodingException e) {
-//            // writing error to Log
-//            e.printStackTrace();
-//        }
-//
-//        // Making HTTP Request
-//        try {
-//            HttpResponse response = httpClient.execute(httpPost);
-//
-//            // writing response to log
-//            Log.d("Http Response:", response.toString());
-//
-//        } catch (IOException e) {
-//            // writing exception to log
-//            e.printStackTrace();
-//        }
-
-
-
-        //------------------Forth Attempt-------------------------------
-//        HttpParams params = new BasicHttpParams();
-//        HttpConnectionParams.setConnectionTimeout(params, 5000);
-//        HttpConnectionParams.setSoTimeout(params, 5000);
-
         List<NameValuePair> nameValuePairs = new ArrayList<>();
         nameValuePairs.add(new BasicNameValuePair(parameters[0], parameters[1]));
         nameValuePairs.add(new BasicNameValuePair(parameters[2], parameters[3]));
@@ -164,20 +85,15 @@ public class HttpManager
         HttpPost httppost = new HttpPost(url);
 
         try {
-
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             HttpResponse response = httpclient.execute(httppost);
 
             int status = response.getStatusLine().getStatusCode();
             Log.i("Post Activity", "Post status: " + status);
 
-//            Toast.makeText(new AddReview(), "Post status: " + status, Toast.LENGTH_LONG).show();
-
-//            HttpEntity entity = response.getEntity();
             Log.d("HTTP POST", "HTTP POST REQUEST: OK");
         } catch (Exception e) {
             Log.e("HTTP", "Error in http connection " + e.toString());
         }
-
     }
 }

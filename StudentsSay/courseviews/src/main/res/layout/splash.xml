@@ -6,7 +6,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Studens Say: Course Reviews"
+            android:text="Studens Say: Course Views"
             android:id="@+id/textView12"
             android:textColor="#ffffff"
             android:textSize="40sp"

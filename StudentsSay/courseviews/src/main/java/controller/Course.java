@@ -3,12 +3,11 @@ package controller;
 /**
  * author: JJ Lindsay
  * version: 1.0
- * Course: ITEC 4550 Spring 2015
+ * Course: ITEC 4550 - End of Semester Project
  * Written: 4/26/2015
  *
- * This class represents a ...
  *
- * Purpose: Allows the manipulation of a ...
+ * Purpose: To represent a course
  */
 public class Course
 {
@@ -23,9 +22,6 @@ public class Course
 
     public Course(int aCourseNumber)
     {
-//        Course.courseNumber = aCourseNumber;
-//        //this uses the key to get the value, in this case the course name
-//        Course.courseName = Courses.getCourseList().get(aCourseNumber);
         this(aCourseNumber, Courses.getCourseList().get(aCourseNumber));
     }
 
