@@ -1,4 +1,4 @@
-# StudentsSay
+# Students Say: Course Views
 
 Individually chosen, end of semester Mobile Application project.
 The idea behind this project is to incorporate 8+ concepts we have learned and expand on 1 beyond the course.
