@@ -105,10 +105,11 @@
                 android:layout_height="wrap_content"
                 android:text="Gimp/etc."
                 android:id="@+id/textView22"
-                android:layout_alignParentEnd="false"
+                android:layout_alignParentEnd="true"
                 android:textSize="30sp" android:textColor="#fff"
                 android:layout_alignParentRight="true"
-                android:layout_alignBottom="@+id/textView20"/>
+                android:layout_alignBottom="@+id/textView20" android:layout_toEndOf="@+id/textView20"
+                android:layout_toRightOf="@+id/textView20" android:gravity="center"/>
         <SeekBar
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
