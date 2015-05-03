@@ -1,6 +1,6 @@
 # Students Say: Course Views
 
-Individually chosen, end of semester Mobile Application project.
+An individually chosen, end of semester Mobile Application project.
 The idea behind this project is to incorporate 8+ concepts we have learned and expand on 1 beyond the course.
 <hr/>
 This app's intended purpose is to help users build better class schedules for themselves.
