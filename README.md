@@ -21,4 +21,4 @@ This app's intended purpose is to help users build better class schedules for th
 
 <hr/>
 ![wireframe](http://wiki.ggc.edu/images/b/b8/JALITECWireFrame1.png)
-A screeen flow depicting the splash screen, main screen, browse screen, summary screen, and the add review screen.
+A screen flow diagram depicting the splash screen, main screen, browse screen, summary screen, and the add review screen.
