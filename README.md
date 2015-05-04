@@ -18,3 +18,6 @@ This app's intended purpose is to help users build better class schedules for th
 <li>Restfulweb Services <b>completed</b></li>
 <li><del>Ruby-On-Rails</del> <b>using php/jquery instead</b></li>
 </ol>
+
+<hr/>
+![wireframe](http://wiki.ggc.edu/wiki/File:JALITECWireFrame1.png)
