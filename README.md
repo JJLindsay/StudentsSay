@@ -20,4 +20,4 @@ This app's intended purpose is to help users build better class schedules for th
 </ol>
 
 <hr/>
-![wireframe](http://wiki.ggc.edu/wiki/File:JALITECWireFrame1.png)
+![wireframe](http://wiki.ggc.edu/images/b/b8/JALITECWireFrame1.png)
