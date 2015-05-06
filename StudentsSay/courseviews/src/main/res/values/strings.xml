@@ -4,5 +4,7 @@
     <string name="app_name">Students Say</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="dialog_wifi">Alert! This application requires an internet connection to run!</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
