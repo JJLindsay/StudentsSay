@@ -12,7 +12,7 @@ This app's intended purpose is to help users build better class schedules for th
 <li>Multiple Activities <b>completed</b></li>
 <li>Custom Views <b>completed</b></li> 
 <li><del>GridView</del> <b>RelativeLayout</b></li>
-<li><del>Fragments</del> <b>Not incorportated</b></li>
+<li><del>Fragments</del> <b>DialogFragment used</b></li>
 <li><del>ListView</del> <b>Linear(Horizontal) Layout</b></li>
 <li>Multimedia <b>completed</b></li> 
 <li>Restfulweb Services <b>completed</b></li>
