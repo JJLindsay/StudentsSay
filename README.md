@@ -1,4 +1,5 @@
 # Students Say: Course Views
+######v1.1 DESIGNED FOR TABLETS PRIMARILY
 
 An individually chosen, end of semester Mobile Application project.
 The idea behind this project is to incorporate 8+ concepts we have learned and expand on 1 beyond the course.
